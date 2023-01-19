@@ -19,7 +19,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class=/main_page id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Главная</a>
@@ -56,28 +56,22 @@
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Number</th>
+        <th scope="col">Start</th>
+        <th scope="col">Finish</th>
+        <th scope="col">Days</th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
     <tr>
+        {% for post in posts %}
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
+        <td>{{ post."number" }}</td>
+        <td>{{ post."departure" }}</td>
+        <td>{{ post."arrival" }}</td>
+        <td>{{ post."days" }}</td>
+        {% endfor %}
     </tr>
     </tbody>
 </table>
